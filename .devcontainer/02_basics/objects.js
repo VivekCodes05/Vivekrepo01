@@ -38,4 +38,7 @@ obj1.myfunc2=function(){
 }
 console.log(obj1.myfunc2())
 
+//imp note- we usually use dot notation to access the obj attr but in some special cases like symbol , asked by interviewer (not to use dot notation)
+   //we require [] sq. bracket like console.log(["mySym"])   
+
 
