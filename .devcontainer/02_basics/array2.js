@@ -12,7 +12,7 @@ const combined = [...a, ...b]       //spread operator(...x,...y,...z)-used to co
 //console.log(combined)                      //spread is preferred over concat bcz it can join more than 2 at a time
 
 const another_arr=[1,2,["vivek","d",[6,7]],"aryan"]
-console.log(another_arr.flat(Infinity))
+console.log(another_arr.flat(Infinity))                   //flat(depth) method used to return new array with all subarray elements to specified depth 
 
 //converting strings,object to array
 const  name="aryan"
