@@ -6,6 +6,7 @@ const exp=new String("world")
 
 //there are few methods for variable of string like name,name2 but
 //  more methods are there for object of string like temp,exp
+//variables like name,name2 are recommended to use in 99.99% cases as they use less space and have all methods as other
 //console.log(`hello everyone my name is ${temp.charAt(2)} and saying hello to the ${exp.slice(1,4)}`);
 //console.log(`hello ${temp.length}`)
 const substr=temp.substring(0,3)
