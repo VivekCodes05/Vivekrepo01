@@ -1,4 +1,6 @@
 let date=new Date()
+console.log(date.toLocaleTimeString());
+console.log(date.toLocaleDateString())
 console.log(date)
 console.log(date.toString())
 console.log(date.toISOString())

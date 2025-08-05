@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICE OF CREATION OF ELEMENT</title>
+</head>
+<body style="background-color: #212121;color:#fff">
+   <ul class="father" id="1234">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+</ul>
+</body>
+<script>
+    const li=document.createElement("li")
+    li.innerText="fourth"
+    console.log(li);
+    
+    document.getElementsByClassName("father")[0].appendChild(li)
+    li.style.backgroundColor='red'
+    li.innerHTML="<b>I added fourth li using dom</b>"
+
+    //creating element using function
+    function myfunc(lang){
+        const mylang=document.createElement("li")
+        mylang.innerHTML=`language is ${lang}`
+        document.querySelector(".father").appendChild(mylang)
+    }
+    myfunc("python")
+
+    //more optimized approach
+    function func(lang){
+       const optilang= document.createElement("li")
+       optilang.appendChild(document.createTextNode(lang))
+document.querySelector(".father").appendChild(optilang)
+    }
+func("java")
+</script>
+</html>

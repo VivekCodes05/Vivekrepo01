@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;color:#fff">
+    <ul class="father">
+        <li>C</li>
+        <li>C++</li>
+        <li>java</li>
+        <li>python</li>
+    </ul>
+</body>
+<script>
+    const editli=document.querySelector("li:nth-child(3)")
+    editli.innerHTML="changed!!"    //this is editing existing element
+
+    //second approach by creating a element then replacing desired element with it
+    const newli=document.createElement("li")
+    newli.textContent="new way"
+    //document.querySelector("li:nth-child(4)").replaceWith(newli)
+    //also already setup element mein replace try
+    editli.replaceWith(newli)
+    //we cant replace two different elements with single element ,it will replace second element 
+
+//delete an element
+  const remove_ele=document.querySelector("li:first-child")
+  remove_ele.remove()
+</script>
+</html>
