@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Images</title>
+</head>
+<body>
+
+    <h2>AMAZING IMAGES</h2>
+    
+    <div>
+        <ul id="images">
+            <li >
+                <img id="taj-mahal-image" width="200px" height="200" src="https://images.pexels.com/photos/30638768/pexels-photo-30638768.jpeg" alt="Taj Mahal" width="300">
+            </li>
+            <li >
+                <img id="kedarnath" width="200px" height="200"  src="https://images.pexels.com/photos/15031440/pexels-photo-15031440.jpeg" alt="" width="300">
+            </li>
+            <li >
+                <img id="eiffel-tower-image" width="200px" height="200" src="https://images.pexels.com/photos/1530259/pexels-photo-1530259.jpeg" alt="" width="300">
+            </li>
+            <li>
+                <img id="pyramids-image"  width="200px" height="200" src="https://images.pexels.com/photos/7566890/pexels-photo-7566890.jpeg" alt="" width="300">
+            </li>
+            <li>
+                <a id="wiki" href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Visit Wikipedia</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    document.querySelector("#images").addEventListener("click",function(event){
+        if(event.target.tagName === "IMG"){
+            alert("You clicked on an image");
+            console.log("You clicked on an image");
+        }
+    },false);
+    document.querySelector("#kedarnath").addEventListener("click",function(){
+        alert("you clicked on Kedarnath image");
+        console.log("You clicked on Kedarnath image");
+        
+    },false)
+    //in above code we are using event delegation to handle click events on images
+    //we are seeing bubbling effect i.e.when we click on kedarnath image the event is bubbling up from the kedarnath 
+    //image to the ul element
+
+    //reverse of bubbling is capturing which can be achieved using 3rd param of addEventListener as true
+    //we can stop this bubbling effect by using e.stopPropagation() method 
+    document.querySelector("#pyramids-image").addEventListener("click",function(e){
+        e.stopPropagation();
+        alert("you clicked on pyramids image");
+        console.log("You clicked on pyramids image");
+    },false)
+
+    document.querySelector("#wiki").addEventListener("click",function(e){
+        e.preventDefault();  //this will prevent the default action of the link
+    },false)
+
+    //now we will add a functionality that when we click on a image it will disappear
+    document.querySelector("#images").addEventListener("click",function(e){
+       //e.target.parentNode.remove(); 
+       //console.log("You clicked on an image and it has been removed");
+    })
+    //with above code ,if we click other than the exact image it will remove all images bcz 
+    //clicking on exact img will remove its parent which is li while, clicking on other spaces will have li as element and
+    //parent as ul which will remove all images. 
+    
+    //To remove only what we wanted we will use if condition to check the tag name of target
+    document.querySelector("#images").addEventListener("click",function(e){
+        if(e.target.tagName === "IMG"){
+            e.target.parentNode.remove(); 
+            console.log("You clicked on an image and it has been removed");
+        }        
+},false)
+</script>
+</html>
