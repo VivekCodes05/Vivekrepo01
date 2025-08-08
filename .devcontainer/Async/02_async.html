@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start stop</title>
+    <h1>program to start printing in console</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</head>
+<body>
+    <script>
+        function print(){
+            console.log("printing ");
+         }
+        let setMe; //variable to hold the interval ID
+        document.querySelector("#start").addEventListener("click",()=>{
+            setMe=setInterval(print,1000); //prints every second
+                     }); //only when event occurs,start the interval of doing something here printing in console and 
+                     //always remember to store the interval ID in a variable so that you can clear it later
+        
+        document.querySelector("#stop").addEventListener("click",()=>{
+            clearInterval(setMe); //stops the interval using the interval ID 
+            console.log("stopped printing");
+                        
+        });
+
+
+    </script>
+    
+</body>
+</html>

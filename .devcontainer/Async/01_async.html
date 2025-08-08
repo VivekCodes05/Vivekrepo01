@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Intro</title>
+    <h1> welcome to INDIA!</h1>
+    <button id="stop">Stop</button>
+</head>
+<body>
+    
+</body>
+<script>
+    //setTimeout(()=>{document.querySelector("h1").innerHTML="Thanks for your visit" },3000); //changes h1 text after 3 seconds
+    
+    //more clean way to do the same thing
+    function changeH1(){
+        document.querySelector("h1").innerHTML="Thanks for your visit";
+    }
+    const clearMe=setTimeout(changeH1,2000); //Note:- we must pass the reference of the function, not call it (no parentheses)
+
+    document.querySelector("#stop").addEventListener("click",()=>{
+        clearTimeout(clearMe); //stops the timeout
+        const temp=document.createElement("h2");
+        temp.innerHTML="Timeout Stopped";
+        document.body.appendChild(temp);
+    });
+</script>
+</html>
